@@ -76,7 +76,7 @@ class Bacteria
  	}
  	void show()
  	{
- 		fill(255); 
+ 		fill((int)(Math.random*200)+75), (int)(Math.random*200)+75, 0); 
  		ellipse(myX, myY, 10, 10); 
  	}
  	//lots of java!   
