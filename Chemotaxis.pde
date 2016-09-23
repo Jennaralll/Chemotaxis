@@ -7,7 +7,7 @@ void setup()
  {     
  	size(600, 600);
  	one = new Bacteria();
- 	colony = new Bacteria[8];
+ 	colony = new Bacteria[15];
  	for (int i=0; i < colony.length; i ++) 
  	{
 		colony[i] = new Bacteria();
@@ -32,6 +32,7 @@ void draw()
  }  
  void mousePressed()
  {
+ 	fill(foodColor);
  	food = true;
  	// Bacteria.add();
  }
@@ -51,8 +52,15 @@ class Bacteria
  	} 
  	void walk()
  	{
- 		myX = myX + (int)(Math.random()*3)-1; 
- 		myY = myY + (int)(Math.random()*3)-1; 
+
+ 		myX = myX + (int)(Math.random()*5)-2; 
+ 		myY = myY + (int)(Math.random()*5)-2; 
+ 		fill(0, 255, 0, 25);
+ 		ellipse(myX, myY, 10, 10);
+ 		fill(0, 255, 0, 50);
+ 		ellipse(myX+3, myY+3, 10, 10);
+ 		fill(0, 255, 0, 75);
+ 		ellipse(myX+7, myY+7, 10, 10);
  		if (food == true) 
  		{
  			if(myX < mouseX && myY < mouseY)
@@ -76,7 +84,7 @@ class Bacteria
  	}
  	void show()
  	{
- 		fill((int)(Math.random*200)+75), (int)(Math.random*200)+75, 0); 
+ 		
  		ellipse(myX, myY, 10, 10); 
  	}
  	//lots of java!   
